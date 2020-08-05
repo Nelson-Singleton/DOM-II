@@ -10,18 +10,63 @@ function randomNumber(max){
 function changeLogo(event) {
     const textColor = 'rgb(' + randomNumber(255) + ',' + randomNumber(255) + ',' + randomNumber(255) + ')';
     headerLogo.style.color = textColor;
-    console.log("Logo color changes on click.")
-}
-headerLogo.addEventListener('mouseover', changeLogo)
-//-----------------------------------------------------------------------------------
-
-// nav button font size increase
-const navLink = document.querySelectorAll('nav-link')
-
-function changeNavLink(event){
     
 }
-navLink.addEventListener('click', changeNavLink)
+headerLogo.addEventListener('click', changeLogo)
+//-----------------------------------------------------------------------------------
+
+// nav button box shadow
+const navLink = document.querySelector('.nav')
+
+function changeNavLink(event) {
+    navLink.style.boxShadow = "5px 5px 10px 10px green"
+}  
+
+navLink.addEventListener('mouseenter', changeNavLink)
+//------------------------------------------------------------------------
+
+//nav button remove shadow
+function changeNavLinkAgain(event) {
+    navLink.style.boxShadow = "5px 5px 10px 10px white"
+    
+}
+navLink.addEventListener('mouseleave', changeNavLinkAgain)
+//------------------------------------------------------------------------
+
+//underline intro after scrolling with mouse wheel
+const intro = document.querySelector('.intro')
+
+function changeIntro(event){
+    intro.style.textDecorationLine = "underline"
+}
+
+intro.addEventListener('wheel', changeIntro)
+
+//------------------------------------------------------------------------
+
+//Change text color on double click
+
+const mainContent = document.querySelector(".text-content")
+function changeContentSection(){
+    mainContent.style.color = "red"   
+
+}
+mainContent.addEventListener('dblclick', changeContentSection)
+
+//------------------------------------------------------------------------
+
+//change cursor on bus image hover
+
+const imageCursor = document.querySelector('img')
+function changeCursor(event){
+    imageCursor.style.cursor = "zoom-in"
+    
+}
+imageCursor.addEventListener('mouseover', changeCursor)
+
+//------------------------------------------------------------------------
+
+
 
 
 /*  * `mouseover`
