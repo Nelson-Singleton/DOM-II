@@ -66,7 +66,74 @@ imageCursor.addEventListener('mouseover', changeCursor)
 
 //------------------------------------------------------------------------
 
+//change nav link color on focus
 
+const navFocus = document.querySelectorAll('a')
+const navFocus1 = document.querySelectorAll('a').forEach(item =>{
+    item.addEventListener('focus', event => {
+        for(let i = 0; i < navFocus.length; i++ ){
+            navFocus[i].style.backgroundColor = "red"
+        }
+    })
+})
+// function changeNavLink(event) {
+//     const textColor = 'rgb(' + randomNumber(255) + ',' + randomNumber(255) + ',' + randomNumber(255) + ')';
+//     navLink.style.color = textColor;
+// }
+// navLink.addEventListener('mouseenter', changeNavLink)
+//-------------------------------------------------------------------------
+
+//change nav link color back to white on blue
+
+const navFocus2 = document.querySelectorAll('a').forEach(item =>{
+    item.addEventListener('blur', event => {
+        for(let i = 0; i < navFocus.length; i++ ){
+            navFocus[i].style.backgroundColor = "white"
+        }
+    })
+})
+//---------------------------------------------------------------------
+
+//change image border on mouseover
+
+const imgBorder = document.querySelectorAll('.img-content')
+
+const imgBorder1 = document.querySelectorAll('.img-content').forEach(item => { //select all members of img-content class and iterate through them
+    item.addEventListener('mouseenter', event => { // on each iteration add an event listener and run a function
+        for(let i=0; i < imgBorder.length; i++){ //loop through each item in the class and add a border
+            imgBorder[i].style.border = "5px dashed red"
+        }
+    })
+})
+// function changeImgBorder(){
+//     for (let i = 0; i < imgBorder.length; i++){
+//         imgBorder[i].addEventListener('click', function(){
+//             imgBorder[i].style.border = "1px solid red"
+//         })
+//     }
+// }
+//-------------------------------------------------------------------------
+
+//on button click, more fun!
+const bottomButton = document.querySelectorAll('.btn')
+
+const bottomButton1 = document.querySelectorAll('.btn').forEach(item => { 
+    item.addEventListener('click', event => { 
+        for(let i=0; i < bottomButton.length; i++){ 
+            bottomButton[i].textContent = "Fun Bus is Fun!!!!"
+            
+        }
+    })
+})
+//-------------------------------------------------------------------------
+
+//Prevent links from refreshing page
+
+document.querySelectorAll("a").forEach(item => {
+    item.addEventListener("click", event =>{
+    event.preventDefault()
+    })
+  });
 
 
 /*  * `mouseover`
